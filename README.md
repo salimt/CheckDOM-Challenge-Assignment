@@ -7,7 +7,7 @@ The elements that will be used are: `<b>`, `<i>`, `<em>`, `<div>`, `<p>`.
 
 Your program should support 3 cases:
 1. the string is a correct sequence of nested HTML elements, it should return `true`
-2. the string is almost correct: by changing a single tag you can make it correct, it should return the first tag to change. Changing a tag does not include adding or removing a tag, or changing the opening into a closing tag and vice versa.
+2. the string is almost correct: by changing a single tag you can make it correct, it should **return the first tag to change**. Changing a tag does not include adding or removing a tag, or changing the opening into a closing tag and vice versa.
 3. the string is incorrect (and to be correct it would require changing more than one element), your program should return `false`.
 
 ## 🧩 Examples
