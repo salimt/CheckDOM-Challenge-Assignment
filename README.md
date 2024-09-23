@@ -21,7 +21,6 @@ Reason: the HTML is nested correctly
 
 ### Example 2
 ```html
-Copy
 Input: "<div><i>hello</i>world</b>"
 Output: "div"
 Reason: if the first `<div>` element were changed into a `<b>`, the string would be properly nested
@@ -29,7 +28,6 @@ Reason: if the first `<div>` element were changed into a `<b>`, the string would
 
 ### Example 3
 ```html
-Copy
 Input: "</div><p></p><div>"
 Output: false
 Reason: the order of opening and closing tags is not respected, changing any one tag cannot make it correct
@@ -38,15 +36,15 @@ Reason: the order of opening and closing tags is not respected, changing any one
 ## Example 4
 
 ```html
-**Input:** "<em></em><em></em><p></b>"
-**Output:** p
+Input: "<em></em><em></em><p></b>"
+Output: p
 ```
 
 ## Example 5
 
 ```html
-**Input:** "< div>< p></p>< b><p></div>"
-**Output:** false
+Input: "< div>< p></p>< b><p></div>"
+Output: false
 ```
 
 
