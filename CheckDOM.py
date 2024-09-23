@@ -78,9 +78,10 @@ def checkDOM(strParam):
 import unittest
 
 class TestCheckDOM(unittest.TestCase):
-
-
-
+    """
+    A test case class for the CheckDOM.py module.
+    This class contains multiple test methods to validate the behavior of the checkDOM function.
+    """
     def test_example_1(self):
         self.assertTrue(checkDOM("<div><b><p>hello world</p></b></div>"))
 
