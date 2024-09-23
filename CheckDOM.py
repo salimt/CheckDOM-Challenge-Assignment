@@ -203,5 +203,44 @@ class TestCheckDOM(unittest.TestCase):
     def test_tags_with_special_characters(self):
         self.assertTrue(checkDOM("<div>@#$%^&*()</div>"))
 
+    def test_nested_valid_empty_tags(self):
+        self.assertTrue(checkDOM("<div><b></b><i></i></div>"))
+
+    def test_tags_with_special_html_characters(self):
+        self.assertTrue(checkDOM("<div>&lt; &gt; &amp; </div>"))
+
+    def test_nested_tags_with_text_and_empty_tags(self):
+        self.assertTrue(checkDOM("<div><b>text</b><i></i></div>"))
+
+    def test_adjacent_empty_tags(self):
+        self.assertTrue(checkDOM("<b></b><i></i>"))
+
+    def test_long_string_of_text_with_tags(self):
+        self.assertTrue(checkDOM("<div>" + "hello " * 1000 + "</div>"))
+
+    def test_invalid_tags_with_unmatched_nested_tags(self):
+        self.assertFalse(checkDOM("<div><b><i></div></b></i>"))
+
+    def test_tags_with_numeric_characters(self):
+        self.assertTrue(checkDOM("<div>123 <b>456</b></div>"))
+
+    def test_empty_nested_structure(self):
+        self.assertTrue(checkDOM("<div><div></div></div>"))
+
+    def test_mismatched_tags_with_special_characters(self):
+        self.assertFalse(checkDOM("<div><b>text</b></i></div>"))
+
+    def test_large_input_with_correct_nesting(self):
+        self.assertTrue(checkDOM("<div>" + "<b><i>nested</i></b>" * 1000 + "</div>"))
+
+    def test_large_input_with_incorrect_nesting(self):
+        self.assertFalse(checkDOM("<div>" + "<b><i>nested</b></i>" * 1000 + "</div>"))
+
+    def test_multiple_closing_tags(self):
+        self.assertFalse(checkDOM("<div></div></div>"))
+
+    def test_correctly_nested_with_mixed_content(self):
+        self.assertTrue(checkDOM("<div><b>Content</b> and <i>more</i></div>"))
+
 if __name__ == '__main__':
     unittest.main()
