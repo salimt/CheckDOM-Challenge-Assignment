@@ -77,6 +77,23 @@ import unittest
 
 class TestCheckDOM(unittest.TestCase):
 
+
+
+    def test_example_1(self):
+        self.assertTrue(checkDOM("<div><b><p>hello world</p></b></div>"))
+
+    def test_example_2(self):
+        self.assertEqual(checkDOM("<div><i>hello</i>world</b>"), "div")
+
+    def test_example_3(self):
+        self.assertFalse(checkDOM("</div><p></p><div>"))
+
+    def test_example_4(self):
+        self.assertEqual(checkDOM("<em></em><em></em><p></b>"), "p")
+
+    def test_example_5(self):
+        self.assertFalse(checkDOM("<div><p></p><b><p></div>"))
+
     def test_valid_html_nested_correctly(self):
         self.assertTrue(checkDOM("<div><b><p>hello world</p></b></div>"))
         self.assertTrue(checkDOM("<b><i><em>nested text</em></i></b>"))

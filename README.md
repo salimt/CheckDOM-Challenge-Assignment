@@ -38,14 +38,14 @@ Reason: the order of opening and closing tags is not respected, changing any one
 ## Example 4
 
 ```html
-**Input:** &lt;em&gt;&lt;/em&gt;&lt;em&gt;&lt;/em&gt;&lt;p&gt;&lt;/b&gt;  
+**Input:** "<em></em><em></em><p></b>"
 **Output:** p
 ```
 
 ## Example 5
 
 ```html
-**Input:** &lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;b&gt;&lt;p&gt;&lt;/div&gt;  
+**Input:** "< div>< p></p>< b><p></div>"
 **Output:** false
 ```
 
