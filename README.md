@@ -35,22 +35,20 @@ Output: false
 Reason: the order of opening and closing tags is not respected, changing any one tag cannot make it correct
 ```
 
-## 📚 Additional Examples
+## Example 4
 
-<details>
-<summary>Click to expand!</summary>
-
-### Example 4
+```html
 **Input:** &lt;em&gt;&lt;/em&gt;&lt;em&gt;&lt;/em&gt;&lt;p&gt;&lt;/b&gt;  
 **Output:** p
+```
 
-### Example 5
+## Example 5
+
+```html
 **Input:** &lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;b&gt;&lt;p&gt;&lt;/div&gt;  
 **Output:** false
+```
 
-</details>
-
----
 
 ## 🔍 Browse Resources
 
