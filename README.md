@@ -1,4 +1,4 @@
-# 🚀 Check DOM - HTML Element - coderbyte / <sup>odoo</sup>
+# 🚀 Check DOM - HTML Element - coderbyte / <span style="font-size: xx-small;">odoo</span>
 
 ## 📜 Description
 
