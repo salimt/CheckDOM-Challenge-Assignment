@@ -58,9 +58,9 @@ Search for any help or documentation you might need for this problem. For exampl
 
 ```mermaid
 graph TD;
-    A[Start] --> B{Is the string correctly nested?};
+    A[Start] --> B{Is the string correctly nested? + sequence order};
     B -- Yes --> C[Return true];
-    B -- No --> D{Can it be corrected by changing one tag?};
+    B -- No --> D{Can it be corrected by changing one tag? no adding or removing};
     D -- Yes --> E[Return the first tag to change];
     D -- No --> F[Return false];
 ```
