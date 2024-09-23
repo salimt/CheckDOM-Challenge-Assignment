@@ -75,4 +75,4 @@ If you find this project helpful, please consider giving it a star ⭐ on GitHub
 ## 📜 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-<sup>Keywords: odoo coding challenge, Odoo developer position, odoo coding test, Odoo assessment, odoo coderbyte, odoo technical assessment</sup>
+<sup>Keywords: odoo coding challenge, Odoo developer position, odoo coding test, Odoo assessment, odoo coderbyte, odoo technical assessment, odoo belgium, odoo europe, odoo india</sup>
