@@ -1,4 +1,4 @@
-# 🚀 CheckDOM - HTML Element - coderbyte / <span style="font-size: xx-small;">odoo</span>
+# 🚀 CheckDOM - HTML Element - coderbyte 
 
 ## 📜 Description
 
