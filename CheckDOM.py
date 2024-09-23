@@ -25,6 +25,8 @@ def checkDOM(strParam):
     mismatch_tag = None
     mismatch_count = 0
 
+    strParam = strParam.lower().replace(" ", "")
+
     if (1 < len(strParam) <= 6 and strParam.count('<') == 1) or strParam.count('<') % 2 == 1:
         return False
 
@@ -258,6 +260,32 @@ class TestCheckDOM(unittest.TestCase):
 
     def test_correctly_nested_with_mixed_content(self):
         self.assertTrue(checkDOM("<div><b>Content</b> and <i>more</i></div>"))
+
+    def test_tags_with_extra_whitespace(self):
+        self.assertTrue(checkDOM("<div > <b> text </b> </div>"))
+        self.assertTrue(checkDOM("<div> <i> text </i> </div>"))
+
+    def test_case_insensitive_tags(self):
+        self.assertTrue(checkDOM("<DIV><b>text</B></DIV>"))
+        self.assertTrue(checkDOM("<div><B>text</b></DIV>"))
+
+    def test_invalid_characters_in_tags(self):
+        self.assertFalse(checkDOM("<div><b@>text</b@></div>"))
+        self.assertFalse(checkDOM("<div><i#>text</i#></div>"))
+
+    def test_empty_tags(self):
+        self.assertTrue(checkDOM("<div><b></b></div>"))
+        self.assertTrue(checkDOM("<div><i></i></div>"))
+
+    def test_large_input_with_incorrect_nesting(self):
+        self.assertFalse(checkDOM("<div>" + "<b><i>nested</b></i>" * 1000 + "</div>"))
+
+    def test_multiple_closing_tags(self):
+        self.assertFalse(checkDOM("<div></div></div>"))
+
+    def test_correctly_nested_with_mixed_content(self):
+        self.assertTrue(checkDOM("<div><b>Content</b> and <i>more</i></div>"))
+
 
 if __name__ == '__main__':
     unittest.main()
